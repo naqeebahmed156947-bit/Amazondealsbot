@@ -1,6 +1,6 @@
 name: Amazon Deals Auto Post
 
-on:
+"on":
   workflow_dispatch:
 
 jobs:
