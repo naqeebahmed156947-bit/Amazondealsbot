@@ -4,7 +4,7 @@ name: Amazon Deals Bot Test
   workflow_dispatch:
 
 jobs:
-  post:
+  main:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,10 +17,12 @@ jobs:
           python-version: "3.x"
 
       - name: Install requirements
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
 
       - name: Run bot
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHANNEL: ${{ secrets.TELEGRAM_CHANNEL }}
-        run: python main.py
+        run: |
+          python main.py
